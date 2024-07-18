@@ -15,9 +15,12 @@ const GamePage: ActivityComponentType = () => {
   const userList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 23, 2, 2, 2, 2];
   return (
     <AppScreen appBar={{ title: "바인비 계산기" }}>
-      <article className="relative w-full h-full flex flex-col items-center">
+      <article className="dark : text-black relative w-full h-full flex flex-col items-center">
         <div className="flex w-full justify-start p-[2rem] py-[1rem]">
-          <button onClick={onClick} className=" border border-blue rounded-lg ">
+          <button
+            onClick={onClick}
+            className="dark:text-white border border-blue rounded-lg "
+          >
             내 바인 관리
           </button>
         </div>

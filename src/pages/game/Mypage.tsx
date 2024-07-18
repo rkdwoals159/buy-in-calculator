@@ -19,11 +19,17 @@ const MyPage: ActivityComponentType<MyPageParams> = () => {
   };
   return (
     <AppScreen appBar={{ title: "내 바인 관리" }}>
-      <article className="w-full h-full flex flex-col justify-center">
+      <article className="dark: text-black w-full h-full flex flex-col justify-center">
         <div className="w-full p-[2rem] flex flex-col gap-[0.5rem]">
           <div>바이인 금액 : </div>
-          <input className="border rounded-lg mx-[2rem]" type="number" />
-          <button onClick={buyinHandler} className="bg-orange mx-[2rem]">
+          <input
+            className="border rounded-lg mx-[2rem] dark:bg-white dark:text-black px-2"
+            type="number"
+          />
+          <button
+            onClick={buyinHandler}
+            className="bg-orange mx-[2rem] dark:text-white"
+          >
             바이인 하기
           </button>
         </div>
@@ -40,14 +46,24 @@ const MyPage: ActivityComponentType<MyPageParams> = () => {
           {buyinList.map((buyin, index) => (
             <div>
               <span>{index + 1}회차 바이인 : </span>
-              <input disabled type="number" value={buyin} />
+              <input
+                className="border rounded-lg dark:bg-white dark:text-black px-2"
+                type="number"
+                value={buyin}
+              />
             </div>
           ))}
         </section>
         <div className="w-full p-[2rem] flex flex-col gap-[0.5rem]">
           <div>정산요청 금액 : </div>
-          <input className="border rounded-lg mx-[2rem]" type="number" />
-          <button onClick={exitHandler} className="bg-red mx-[2rem]">
+          <input
+            className="border rounded-lg mx-[2rem] dark:bg-white dark:text-black px-2"
+            type="number"
+          />
+          <button
+            onClick={exitHandler}
+            className="bg-red mx-[2rem] dark:text-white"
+          >
             바이인 종료
           </button>
         </div>

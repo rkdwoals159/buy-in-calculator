@@ -13,6 +13,8 @@ export default {
       "gray-dark": "#273444",
       gray: "#8492a6",
       "gray-light": "#d3dce6",
+      black: "#000",
+      white: "#fff",
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
