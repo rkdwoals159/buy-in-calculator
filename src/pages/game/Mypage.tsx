@@ -5,7 +5,7 @@ type MyPageParams = {
   title: string;
   linkUrl?: string;
 };
-const MyPage: ActivityComponentType<MyPageParams> = ({ params }) => {
+const MyPage: ActivityComponentType<MyPageParams> = () => {
   const buyinList = [1, 2, 3, 4, 5];
   const buyinHandler = () => {
     const answer = confirm("바이인 하시겠습니까?");

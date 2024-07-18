@@ -1,12 +1,12 @@
 import { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { GameUseFlow } from "../../utils/gameStackFlow";
-import { useParams } from "react-router";
+// import { useParams } from "react-router";
 import UserCard from "../../components/userCard";
 
 const GamePage: ActivityComponentType = () => {
   const { push } = GameUseFlow();
-  const params = useParams();
+  // const params = useParams();
   const onClick = () => {
     push("MyPage", {
       title: "Hello",
