@@ -2,8 +2,9 @@ import { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { useFlow } from "../utils/stackflow";
 import cryptoRandomString from "crypto-random-string";
+import axios from "axios";
 
-const MyActivity: ActivityComponentType = () => {
+const StartPage: ActivityComponentType = () => {
   const { push } = useFlow();
   const randomString = cryptoRandomString({ length: 30, type: "base64" })
     .toString()
@@ -12,10 +13,21 @@ const MyActivity: ActivityComponentType = () => {
     .split("?")
     .join("");
   const linkUrl = `${import.meta.env.VITE_BASE_URL}/game/${randomString}`;
-  const onClick = () => {
-    push("LinkPage", {
-      title: "Hello",
-      linkUrl: linkUrl,
+  const onClick = async () => {
+    try {
+      const result = await postNewGame();
+      console.log(result);
+      push("LinkPage", {
+        title: "Hello",
+        linkUrl: linkUrl,
+      });
+    } catch (e) {
+      console.error("게임 생성에 실패했습니다:", e);
+    }
+  };
+  const postNewGame = async () => {
+    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/games`, {
+      id: randomString,
     });
   };
   return (
@@ -31,4 +43,4 @@ const MyActivity: ActivityComponentType = () => {
   );
 };
 
-export default MyActivity;
+export default StartPage;

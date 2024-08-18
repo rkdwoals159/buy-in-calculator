@@ -10,6 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Stack />} />
+        <Route path="/:cardId" element={<Stack />} />
         <Route
           path="/game"
           element={<div>정상적인 경로가 아닙니다.</div>}
